@@ -32,7 +32,7 @@ while 1:
             print("UP")
             first = user # 범위 중 가장 작은 수가 사용자가 입력한 값으로 바꿈
         elif user > last or user < first: # 범위를 벗어나는 수를 입력 
-            print("1~100 범위 안에 있는 수를 입력해주세요.") # 도전 수가 올라가지는 않음
+            print("%d~%d 범위 안에 있는 수를 입력해주세요."%(first,last)) # 도전 수가 올라가지는 않음
         elif user == ans: # 정답 맞춤
             print('정답입니다!!')
             print('%d번째만에 맞추셨습니다' %count) # 몇 번째로 맞췄는지 count로 알려줌
