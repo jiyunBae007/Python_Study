@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import random 
+import os.path
 
 nickname = [] # 이름 기록 리스트 
 score = [] # 점수 기록 리스트
@@ -27,7 +28,13 @@ def read():
     f.close()
 
 print("UP & DOWN 게임에 오신 걸 환영합니다~")
-read()
+if not os.path.isfile('UP_and_down.txt'):     #-----> 피드백 1
+    print("Up & Down 게임 기록을 위한 파일을 생성합니다.")
+    f = open("up_and_down.txt", "w")
+    f.close()
+    
+else:
+    read()
 while 1:
     print("\n1. 게임시작 2. 기록확인 3. 게임종료")
     menu = int(input('>> '))
@@ -58,7 +65,7 @@ while 1:
                 if not score:
                     print("최고기록 갱신~!\n")
                     name=input('닉네임을 입력하세요 >> ') 
-                    put(count) # --> 피드백 2
+                    put(count) 
                     score.append(count) # 점수 리스트에 점수 추가
                     nickname.append(name) # 이름 리스트 맨 앞에 이름 추가
                     score.sort() # 오름차순 정렬
