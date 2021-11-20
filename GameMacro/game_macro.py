@@ -10,7 +10,7 @@ for i in range (1, 51): # 눌러야하는 버튼 50개
         buttons = driver.find_elements_by_xpath('//*[@id="grid"]/div[*]') # 모든 버튼을 xpath를 이용해 가져오기
 
         for value in buttons:
-          if value.text == str(i): # div가 i와 같을 때 클릭하기
+          if value.text == str(i):
             value.click()
             print(str(i) + " 클릭")
             break
